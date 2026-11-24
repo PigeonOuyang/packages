@@ -11,8 +11,6 @@
   "should_show_binding_errors": true,
   "input_source": {
     "/input/system": {"type": "button", "click": true, "binding_image_point": [0, 0], "order": 0},
-    "/input/menu": {"type": "button", "click": true, "binding_image_point": [0, 0], "order": 6},
-    "/input/pico": {"type": "button", "click": true, "binding_image_point": [0, 0], "order": 7},
     "/input/trigger": {"type": "trigger", "value": true, "click": true, "touch": true, "binding_image_point": [0, 0], "order": 1},
     "/input/joystick": {"type": "joystick", "click": true, "touch": true, "binding_image_point": [0, 0], "order": 2},
     "/input/grip": {"type": "trigger", "value": true, "click": true, "binding_image_point": [0, 0], "order": 3},
