@@ -6,7 +6,7 @@
 # The preset enables the services; the tests run in the build.
 pkgname=pico4-base
 pkgver=2026.11.23
-pkgrel=1
+pkgrel=2
 pkgdesc="PICO 4 system: preinit, storage and recovery policy, USB link, network, clock, firmware probes"
 arch=(any)
 url="https://github.com/overpressure/phoenix/tree/main/docs"
@@ -20,7 +20,8 @@ backup=(etc/NetworkManager/conf.d/50-pico4-usb.conf
         etc/sysctl.d/50-pico4-console.conf
         etc/sysctl.d/50-pico4-memory.conf
         etc/systemd/coredump.conf.d/50-pico4-limit.conf
-        etc/systemd/system/home.mount)
+        etc/systemd/system/home.mount
+        etc/fonts/conf.d/67-pico4-language-fonts.conf)
 source=(50-pico4-usb.conf
         50-pico4-wifi-address.conf
         50-pico4-wifi-autoconnect.conf
@@ -76,7 +77,8 @@ source=(50-pico4-usb.conf
         vrdevice_path
         test_clock.py test_config.py test_qca6390.py test_usb_internet.py
         test_boot_attempts.sh test_charger.sh test_steamos_readonly.sh
-        50-pico4-base.preset)
+        50-pico4-base.preset
+        67-pico4-language-fonts.conf)
 sha256sums=('d18499e0f76dbe5a67f228a005665353eb18c1ae07ff230dbe84e7ab3b0891a1'
             'a4671220f5b6aa835752b9d43439895ab33fec8cb4ef6604b7675a447ebeee70'
             '7824a2b49644845d9ec8328d8a274069d83b302c2408a12d4624515aefa5077a'
@@ -137,7 +139,8 @@ sha256sums=('d18499e0f76dbe5a67f228a005665353eb18c1ae07ff230dbe84e7ab3b0891a1'
             '773d6276040a1d5625d1e53aaaccf7ecd380e877454f657c8e293e98fb4ad905'
             '51df9a5f288c1d04cc1de4973ba0a51f1745fab5af4c44f1eee6a1791dfc00af'
             'a74dd6e7487fa7c16f6fc995f3ee0a9ec321fceac9f4649d2664b5ba95850201'
-            'fc5ed844a4a3b0e698c18331532f6686c6e766467b623890c82a7ef71fbbc0e0')
+            'fc5ed844a4a3b0e698c18331532f6686c6e766467b623890c82a7ef71fbbc0e0'
+            '843c2f9817a309f9a59193ca71aa83a356cd781ecc28c7352b8929f5a572979e')
 
 build() {
   python3 -B -m unittest test_clock test_config test_qca6390 test_usb_internet
@@ -156,6 +159,9 @@ package() {
   install -Dm644 50-pico4-memory.conf "$pkgdir/etc/sysctl.d/50-pico4-memory.conf"
   install -Dm644 50-pico4-zram.conf "$pkgdir/usr/lib/systemd/zram-generator.conf.d/50-pico4.conf"
   install -Dm644 50-pico4-limit.conf "$pkgdir/etc/systemd/coredump.conf.d/50-pico4-limit.conf"
+  # The CJK face of the text's language, and Noto Sans Arabic, where fontconfig's generic
+  # families would otherwise take the Japanese and Urdu faces.
+  install -Dm644 67-pico4-language-fonts.conf "$pkgdir/etc/fonts/conf.d/67-pico4-language-fonts.conf"
   install -Dm644 home.mount "$pkgdir/etc/systemd/system/home.mount"
   install -Dm644 journald.conf.d-50-pico4.conf "$pkgdir/usr/lib/systemd/journald.conf.d/50-pico4.conf"
   install -Dm644 10-pico4-wlan.link "$pkgdir/usr/lib/systemd/network/10-pico4-wlan.link"
