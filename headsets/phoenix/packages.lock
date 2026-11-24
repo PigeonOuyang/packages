@@ -487,6 +487,7 @@ ddc6848de75a95048baacb5a27f06980dc1f8384f41bd5346d0dd048ee8ebd86  mtdev-1.1.7-1-
 aad7e09fc1b0148b46fd4e83d20eb34acbc32370e3fd8fc8f7f9e7afad823173  networkmanager-1.52.1-1.1-aarch64.pkg.tar.zst
 70476b2f778881c1c6cfed6ae3344cc2045f4d9d02f4590d5ee018d8ad84a555  nftables-1:1.1.5-1-aarch64.pkg.tar.zst
 ac29cf8da523c307a9ef2a4916371177e7c597be143333bbfff733ef8bba375a  noto-fonts-1:2025.11.01-1-any.pkg.tar.zst
+bab25db69704a9055a7b5f608a6ec921ea0b15aa54e1e35ae4d83aa1c0970662  noto-fonts-cjk-20240730-1-any.pkg.tar.zst
 34db08b3f09570154158648b81304bbdb9991178d8da22de096d95968e836d65  noto-fonts-emoji-1:2.051-1-any.pkg.tar.zst
 33c3ce47a23ab2db17bedfb58cf5a8a4a88328875425f63331893f609bfc784f  npth-1.8-1-aarch64.pkg.tar.zst
 8f1ad44d9f9caf9dddf1c54de56ce9c0398770068df57f688c692729a1702b14  nspr-4.38.2-1-aarch64.pkg.tar.zst
