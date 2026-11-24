@@ -140,7 +140,7 @@ sha256sums=('d18499e0f76dbe5a67f228a005665353eb18c1ae07ff230dbe84e7ab3b0891a1'
             '51df9a5f288c1d04cc1de4973ba0a51f1745fab5af4c44f1eee6a1791dfc00af'
             'a74dd6e7487fa7c16f6fc995f3ee0a9ec321fceac9f4649d2664b5ba95850201'
             'fc5ed844a4a3b0e698c18331532f6686c6e766467b623890c82a7ef71fbbc0e0'
-            '843c2f9817a309f9a59193ca71aa83a356cd781ecc28c7352b8929f5a572979e')
+            '6875447f1422c4567a5fefbd2d525d0c55d0617d067ffe6e4f8b40a07506843f')
 
 build() {
   python3 -B -m unittest test_clock test_config test_qca6390 test_usb_internet
