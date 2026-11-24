@@ -121,7 +121,7 @@ deckard-arch-hotfixes-release-0.3/libibus
 # The session's input method: Valve's ibus-gamescope unit runs ibus-daemon, which
 # takes the text of Steam's on-screen keyboard to the apps.
 deckard-arch-hotfixes-release-0.3/ibus
-# Chinese, Japanese and Korean glyphs: noto-fonts has Latin, Greek and Cyrillic only. Steam's
+# Chinese, Japanese and Korean glyphs, which noto-fonts leaves out (it covers most other scripts). Steam's
 # interface, SteamVR's dashboard, the first-run setup and Plasma fall back to the system's fonts.
 noto-fonts-cjk
 # The client polls processes with lsof.
